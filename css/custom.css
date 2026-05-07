@@ -1,0 +1,99 @@
+/* ==========================================================
+ * 自定义样式 — 参考 MrQ (Butterfly) 风格在 Fluid 上做视觉微调
+ * ========================================================== */
+
+/* 主蓝调 (MrQ 同款) */
+:root {
+  --mrq-blue: #4a7dbe;
+  --mrq-blue-soft: #e8f0fb;
+}
+
+/* —————————————————— 顶部导航 —————————————————— */
+/* 略微提亮顶部菜单悬浮效果，更接近 MrQ 的轻盈感 */
+#navbar .navbar-nav .nav-item:hover,
+.navbar a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+/* —————————————————— 文章列表 —————————————————— */
+/* 主面板（卡片）增加圆角、轻阴影、悬浮抬升 — 模仿 Butterfly 的卡片质感 */
+#board {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px 4px rgba(7, 17, 27, 0.05);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.index-container .post:hover,
+#board:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px 4px rgba(7, 17, 27, 0.08);
+}
+
+/* 文章标题悬停色 */
+.index-info .index-header a.index-btn:hover,
+.index-info .index-header a:hover {
+  color: var(--mrq-blue) !important;
+}
+
+/* —————————————————— 首页公告（仿 MrQ card-announcement） —————————————————— */
+/* 在 board 顶部插入一个柔和的公告条 */
+.index-container::before {
+  content: "📢  欢迎来到 WormHeart 的小宇宙，这里有代码、生活与一些零碎的心情。";
+  display: block;
+  background: linear-gradient(135deg, var(--mrq-blue-soft), #f6f9ff);
+  color: #355e93;
+  padding: 12px 18px;
+  border-left: 4px solid var(--mrq-blue);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 暗色模式下的公告条 */
+[data-user-color-scheme="dark"] .index-container::before {
+  background: linear-gradient(135deg, #2a3a55, #1f2b40);
+  color: #cbd6e2;
+  border-left-color: #5b8fd6;
+}
+
+/* —————————————————— 副标题（打字机） —————————————————— */
+#subtitle, .typed-cursor {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* —————————————————— 标签 / 分类彩色化 —————————————————— */
+a.tag,
+.post-meta a:not(.index-btn) {
+  transition: color .25s ease;
+}
+
+a.tag:hover,
+.post-meta a:hover {
+  color: var(--mrq-blue) !important;
+}
+
+/* —————————————————— 关于页 —————————————————— */
+/* 头像增加柔和外发光，与 MrQ 站长卡视觉一致 */
+.about-page .avatar-img,
+.about .avatar-img {
+  box-shadow: 0 4px 18px rgba(74, 125, 190, 0.25);
+}
+
+/* —————————————————— 页脚 —————————————————— */
+#footer {
+  background: transparent;
+}
+
+.footer-separator {
+  margin: 0 6px;
+  color: #b3bac5;
+}
+
+/* —————————————————— 滚动条 —————————————————— */
+::-webkit-scrollbar-thumb {
+  background-color: var(--mrq-blue) !important;
+  border-radius: 6px;
+}
