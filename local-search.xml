@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>转载：Hexo实现部分文章不可见</title>
+    <link href="/2026/07/20/repost-hexo-hide-posts/"/>
+    <url>/2026/07/20/repost-hexo-hide-posts/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文转载自 <a href="https://95qs.github.io/2025/10/02/Hexo%E5%AE%9E%E7%8E%B0%E9%83%A8%E5%88%86%E6%96%87%E7%AB%A0%E4%B8%8D%E5%8F%AF%E8%A7%81/">MrQ - Hexo实现部分文章不可见</a>，原作者：Qs。原文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明来源。</p></blockquote><blockquote><p>本人快临近找实习，需要刷题。刷题的过程自己也想记录在自己的博客，但是刷题的文章会影响首页的内容展示。于是想实现：让部分文章在首页隐藏。</p></blockquote><p>我们是基于 <a href="https://github.com/prinsss/hexo-hide-posts">hexo-hide-posts</a> 这个 Hexo 插件实现的</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>下载插件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pnpm install hexo-hide-posts --save<br></code></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在文章的 <a href="https://hexo.io/docs/front-matter">front-matter</a> 中添加 <code>hidden: true</code> 即可隐藏文章。如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">&#x27;Lorem Ipsum&#x27;</span><br><span class="hljs-attr">date:</span> <span class="hljs-string">&#x27;2019/8/10 11:45:14&#x27;</span><br><span class="hljs-attr">hidden:</span> <span class="hljs-literal">true</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">Lorem</span> <span class="hljs-string">ipsum</span> <span class="hljs-string">dolor</span> <span class="hljs-string">sit</span> <span class="hljs-string">amet,</span> <span class="hljs-string">consectetur</span> <span class="hljs-string">adipiscing</span> <span class="hljs-string">elit.</span><br></code></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在你的站点 <code>_config.yml</code> 中添加如下配置：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">hide_posts:</span><br>  <span class="hljs-comment"># 是否启用 hexo-hide-posts</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br><br>  <span class="hljs-comment"># 隐藏文章的 front-matter 标识，也可以改成其他你喜欢的名字</span><br>  <span class="hljs-attr">filter:</span> <span class="hljs-string">hidden</span><br><br>  <span class="hljs-comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span><br>  <span class="hljs-attr">noindex:</span> <span class="hljs-literal">true</span><br><br>  <span class="hljs-comment"># 在 0.3.0 及以上版本，插件提供了更精细的黑白名单控制。</span><br>  <span class="hljs-comment"># 设置白名单，白名单中的 generator 可以访问隐藏文章</span><br>  <span class="hljs-comment"># 常见的 generators 有：index, tag, category, archive, sitemap, feed, etc.</span><br>  <span class="hljs-comment"># 标签页、分类页、归档页可见</span><br>  <span class="hljs-attr">allowlist_generators:</span> [<span class="hljs-string">tag</span>, <span class="hljs-string">category</span>, <span class="hljs-string">archive</span>]<br><br>  <span class="hljs-comment"># 设置黑名单，黑名单中的 generator 不可以访问隐藏文章</span><br>  <span class="hljs-comment"># 如果同时设置了黑名单和白名单，白名单的优先级更高</span><br>  <span class="hljs-comment"># blocklist_generators: [&#x27;*&#x27;]</span><br></code></pre></td></tr></table></figure><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md">hexo-hide-posts&#x2F;README_ZH.md at master · prinsss&#x2F;hexo-hide-posts</a></p><p><a href="https://insectmk.cn/posts/9c83ed78/#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">无需更改源码！让你的Hexo的文章在首页隐藏</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>转载</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</title>
     <link href="/2026/07/20/repost-hexo-github-pages-blog/"/>
     <url>/2026/07/20/repost-hexo-github-pages-blog/</url>
