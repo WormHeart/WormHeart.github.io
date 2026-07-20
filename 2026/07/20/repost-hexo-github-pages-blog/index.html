@@ -16,29 +16,29 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#4a7dbe">
-  <meta name="author" content="WormHeart">
+  <meta name="author" content="Qs">
   <meta name="keywords" content="WormHeart,博客,Linux,服务器,前端,后端,技术,问题">
   
-    <meta name="description" content="一、安装Debian系统 下载Debian镜像：访问Debian官网，下载最新的Debian 12镜像。 制作启动U盘：使用工具（Rufus）将下载的镜像文件写入U盘，制作成启动盘。 启动安装：通过U盘启动计算机，进入BIOS，然后到Debian安装界面。 设置系统：按照提示进行设置。 安装非图形化界面 不需要进行网络配置，等安装好系统后在进行网络配置 安装ssh server（也可以等安装后，再">
+    <meta name="description" content="本文转载自 MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客，原作者：Qs。原文采用 CC BY-NC-SA 4.0 许可协议，转载请注明来源。  使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置 Debian Server">
-<meta property="og:url" content="https://wormheart.github.io/2026/05/07/Server/index.html">
+<meta property="og:title" content="转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客">
+<meta property="og:url" content="https://wormheart.github.io/2026/07/20/repost-hexo-github-pages-blog/index.html">
 <meta property="og:site_name" content="WormHeart">
-<meta property="og:description" content="一、安装Debian系统 下载Debian镜像：访问Debian官网，下载最新的Debian 12镜像。 制作启动U盘：使用工具（Rufus）将下载的镜像文件写入U盘，制作成启动盘。 启动安装：通过U盘启动计算机，进入BIOS，然后到Debian安装界面。 设置系统：按照提示进行设置。 安装非图形化界面 不需要进行网络配置，等安装好系统后在进行网络配置 安装ssh server（也可以等安装后，再">
+<meta property="og:description" content="本文转载自 MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客，原作者：Qs。原文采用 CC BY-NC-SA 4.0 许可协议，转载请注明来源。  使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-07T08:52:56.000Z">
-<meta property="article:modified_time" content="2026-05-07T09:09:03.970Z">
+<meta property="article:published_time" content="2026-07-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-19T16:00:00.000Z">
 <meta property="article:author" content="WormHeart">
-<meta property="article:tag" content="Debian">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="转载">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>配置 Debian Server - WormHeart</title>
+  <title>转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 - WormHeart</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -285,7 +285,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="配置 Debian Server"></span>
+            <span id="subtitle" data-typed-text="转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客"></span>
           
         </div>
 
@@ -296,8 +296,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-05-07 16:52" pubdate>
-          2026年5月7日 下午
+        <time datetime="2026-07-20 00:00" pubdate>
+          2026年7月20日 凌晨
         </time>
       </span>
     
@@ -308,7 +308,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          1.6k 字
         
       </span>
     
@@ -319,7 +319,7 @@
         
         
         
-          23 分钟
+          14 分钟
         
       </span>
     
@@ -358,91 +358,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">配置 Debian Server</h1>
+            <h1 id="seo-header">转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="一、安装Debian系统"><a href="#一、安装Debian系统" class="headerlink" title="一、安装Debian系统"></a><strong>一、安装Debian系统</strong></h2><ol>
-<li>下载Debian镜像：访问Debian官网，下载最新的Debian 12镜像。</li>
-<li>制作启动U盘：使用工具（Rufus）将下载的镜像文件写入U盘，制作成启动盘。</li>
-<li>启动安装：通过U盘启动计算机，进入BIOS，然后到Debian安装界面。</li>
-<li>设置系统：按照提示进行设置。<ol>
-<li>安装非图形化界面</li>
-<li>不需要进行网络配置，等安装好系统后在进行网络配置</li>
-<li>安装ssh server（也可以等安装后，再下载配置）</li>
-<li>除了一个启动磁盘自动分区外，其他磁盘不需要挂载</li>
+                <blockquote>
+<p>本文转载自 <a target="_blank" rel="noopener" href="https://95qs.github.io/2025/06/22/%E4%BD%BF%E7%94%A8%20hexo%20&&%20GitHub%20Pages%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</a>，原作者：Qs。原文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明来源。</p>
+</blockquote>
+<h2 id="使用-hexo-GitHub-Pages-搭建自己的博客"><a href="#使用-hexo-GitHub-Pages-搭建自己的博客" class="headerlink" title="使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客"></a>使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</h2><blockquote>
+<p>起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之前很多笔记都被自己给抛弃了。如今下定决心自己搞一个技术博客，专门记录自己的学习笔记。</p>
+</blockquote>
+<p>Hexo 是一个使用 MarkDown 格式文本快速构建静态网页的工具：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo 官网</a>；<br>而 GitHub Pages 则是能部署一个静态网页，配合使用你就能搭建自己的博客了。</p>
+<hr>
+<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>你需要准备好以下工具 Node.js、 Git。</p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h2 id="下载-Hexo"><a href="#下载-Hexo" class="headerlink" title="下载 Hexo"></a>下载 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+
+<h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init [目录名称]   # 这里可以指定目录名称，默认为blog<br>cd blog               # 进入blog目录<br>npm install           # 安装依赖<br>hexo server           # 启动本地web服务，在浏览器输入localhost:4000预览博客<br></code></pre></td></tr></table></figure>
+
+<h2 id="生成静态网页"><a href="#生成静态网页" class="headerlink" title="生成静态网页"></a>生成静态网页</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g<br>hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>生成后的关键文件和文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">.deploy/        # 需部署文件<br>node_modules/   # node.js依赖的插件<br>public/         # 生成的静态网页文件<br>scaffolds/      # 模版<br>source/         # 博客正文和其他源文件<br>themes/         # 主题<br>_config.yml     # 全局配置文件<br></code></pre></td></tr></table></figure>
+
+<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo help                   # 查看帮助<br>hexo init                   # 初始化一个目录<br>hexo new draft &quot;pageName&quot;<br>hexo new &quot;postName&quot;         # 新建文章<br>hexo new page &quot;pageName&quot;    # 新建页面<br>hexo generate || hexo g     # 生成网页，可在public目录查看<br>hexo server || hexo s       # 本地预览<br>hexo deploy || hexo d       # 部署.deploy目录<br>hexo clean || hexo c        # 清除缓存，每次部署前都要删除.deploy目录<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常用组合</span><br>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d # 部署到服务器<br>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s # 本地部署<br></code></pre></td></tr></table></figure>
+
+<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><p>暂无，后续有会持续更新</p>
+<h2 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h2><h2 id="创建-GitHub-托管仓库"><a href="#创建-GitHub-托管仓库" class="headerlink" title="创建 GitHub 托管仓库"></a>创建 GitHub 托管仓库</h2><p>创建名称为 username.github.io 的仓库，这是特殊的命名约定。可以通过 <a target="_blank" rel="noopener" href="http://username.github.io/">http://username.github.io</a> 来访问个人主页</p>
+<h2 id="生成-SSH-key"><a href="#生成-SSH-key" class="headerlink" title="生成 SSH key"></a>生成 SSH key</h2><p>参考我之前写的关于 SSH key 的文章：<a target="_blank" rel="noopener" href="https://95qs.github.io/2025/06/21/%E7%94%9F%E6%88%90ssh-key/">生成 ssh-key</a></p>
+<h2 id="修改-Hexo-部署配置"><a href="#修改-Hexo-部署配置" class="headerlink" title="修改 Hexo 部署配置"></a>修改 Hexo 部署配置</h2><p><code>_config.yml</code> 文件在 Hexo 项目根目录下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:yourname/yourname.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="下载部署需要的插件"><a href="#下载部署需要的插件" class="headerlink" title="下载部署需要的插件"></a>下载部署需要的插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>使用以下命令就可以部署了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><h2 id="过程参考"><a href="#过程参考" class="headerlink" title="过程参考"></a>过程参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://yupaits.com/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2">使用hexo快速搭建个人博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://yupaits.com/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2">Hexo教程，看这一篇就够了- How to系列</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20042935/article/details/133920722">保姆级教程：从零构建 GitHub Pages 静态网站</a></li>
 </ol>
-</li>
+<h2 id="过程遇到的一些问题"><a href="#过程遇到的一些问题" class="headerlink" title="过程遇到的一些问题"></a>过程遇到的一些问题</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43546721/article/details/139506583">完美解决 git 报错 “fatal: unable to access ‘https://github.com/.../.git‘: Recv failure Connection was rese</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41688840/article/details/125826614">部署 hexo 遇到报错 ERROR Deployer not found: git 的解决办法</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38781463">hexo 本地测试运行重启后页面空白，提示：WARN No layout: index.html?</a></li>
 </ol>
-<h2 id="二、配置网络"><a href="#二、配置网络" class="headerlink" title="二、配置网络"></a>二、配置网络</h2><h3 id="1-配置静态IP地址"><a href="#1-配置静态IP地址" class="headerlink" title="1. 配置静态IP地址"></a>1. 配置静态IP地址</h3><p>调整网络配置 <code>/etc/network/interfaces</code>，使得其形如</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">auto</span> enp6s0f0<br>iface enp6s0f0 inet static<br>    address <span class="hljs-number">10.176.25.53</span> <span class="hljs-comment"># 分配到这个服务器的IP地址</span><br>    netmask <span class="hljs-number">255.255.254.0</span> <span class="hljs-comment"># 网段的子网掩码，这个子网都是一样的</span><br>    gateway <span class="hljs-number">10.176.24.1</span> <span class="hljs-comment"># 一般是子网的第一个主机</span><br></code></pre></td></tr></table></figure>
-
-<p>网络接口名字<code>altname enp6s0f0</code>每个主机是不大一样的，使用<code>ip a</code>命令查看网络端口对应的<code>altname</code>。</p>
-<p>重启网络网络服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl restart networking.service<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果安装Debian过程中，已经下载了SSH服务，到这一步，就已经可以离开机房了。</p>
-</blockquote>
-<h3 id="2-校园网络认证"><a href="#2-校园网络认证" class="headerlink" title="2. 校园网络认证"></a>2. 校园网络认证</h3><p>挂载含有网络认证脚本的U盘，将脚本复制到服务器（如果此时有SSH服务的话可以直接使用SCP）。</p>
-<p>运行脚本进行网络认证。</p>
-<blockquote>
-<p>到这步已经ping通外网IP，但是不能通过域名访问。</p>
-</blockquote>
-<h3 id="3-修改DNS"><a href="#3-修改DNS" class="headerlink" title="3. 修改DNS"></a>3. 修改DNS</h3><p>修改DNS配置文件<code>/etc/resolv.conf</code>，添加以下内容</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-comment"># 在原始文件基础上添加</span><br><span class="hljs-comment"># nameserver 202.120.224.26 # 不能正常使用</span><br><span class="hljs-comment"># nameserver 1.1.1.1 # 不能正常使用</span><br><span class="hljs-attribute">nameserver</span> <span class="hljs-number">114.114.114.114</span><br>nameserver <span class="hljs-number">8.8.8.8</span><br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>现在可以进行域名访问了。</p>
-</blockquote>
-<h2 id="三、apt换源"><a href="#三、apt换源" class="headerlink" title="三、apt换源"></a>三、apt换源</h2><p>修改<code>/etc/apt/sources.list</code>文件里的内容为（如果没有安装ssh server进行远程操作的话，可以把这个命令写到一个U盘文件里，使用<code>cat xx &gt;&gt; /etc/apt/sources.list</code>写入）</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 统一采用阿里云镜像 </span><br>deb https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm main non-free non-free-firmware contrib <br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm main non-free non-free-firmware contrib <br>deb https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian-security/</span> bookworm-security main <br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian-security/</span> bookworm-security main <br>deb https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm-updates main non-free non-free-firmware contrib <br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm-updates main non-free non-free-firmware contrib <br>deb https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm-backports main non-free non-free-firmware contrib <br>deb-src https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/debian/</span> bookworm-backports main non-free non-free-firmware contrib<br></code></pre></td></tr></table></figure>
-
-<p>终于可以使用apt，把需要的软件都安装一下</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment">#root </span><br>apt-<span class="hljs-built_in">get</span> update &amp;&amp; apt-<span class="hljs-built_in">get</span><span class="hljs-built_in"> upgrade </span><br><span class="hljs-comment"># 安装必要软件 </span><br>apt-<span class="hljs-built_in">get</span> install tmux zsh vim neofetch git sudo curl rsync duf zip unzip<span class="hljs-built_in"> screen </span>fzf fd-find<br></code></pre></td></tr></table></figure>
-
-<h2 id="四、配置SSH-服务"><a href="#四、配置SSH-服务" class="headerlink" title="四、配置SSH 服务"></a><strong>四、配置SSH 服务</strong></h2><h3 id="1-安装SSH-服务（如果安装时没有装ssh-server）"><a href="#1-安装SSH-服务（如果安装时没有装ssh-server）" class="headerlink" title="1. 安装SSH 服务（如果安装时没有装ssh server）"></a>1. <strong>安装SSH 服务（如果安装时没有装ssh server）</strong></h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> install -y ssh<br></code></pre></td></tr></table></figure>
-
-<p>安装完成ssh 服务默认是开启的，手动开启命令</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>ssh start<br></code></pre></td></tr></table></figure>
-
-<p>查看ssh服务状态</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>ssh status<br></code></pre></td></tr></table></figure>
-
-<h3 id="2-修改SSH配置文件"><a href="#2-修改SSH配置文件" class="headerlink" title="2. 修改SSH配置文件"></a>2. 修改SSH配置文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vim <span class="hljs-regexp">/etc/</span>ssh/sshd_config<br></code></pre></td></tr></table></figure>
-
-<p>将57行的注释取消，将yes改为no</p>
-<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs d"><span class="hljs-meta">#line 57:</span><br>PasswordAuthentication no<br></code></pre></td></tr></table></figure>
-
-<p>然后重启ssh服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 对于大多数使用systemd的系统（如Ubuntu 16.04+, CentOS 7+）</span><br><span class="hljs-built_in">sudo</span> systemctl restart ssh<br><span class="hljs-comment"># 或</span><br><span class="hljs-built_in">sudo</span> systemctl restart sshd<br><br><span class="hljs-comment"># 对于使用SysV init的系统</span><br><span class="hljs-built_in">sudo</span> service ssh restart<br><span class="hljs-comment"># 或</span><br><span class="hljs-built_in">sudo</span> service sshd restart<br></code></pre></td></tr></table></figure>
-
-<p>检查最终生效的配置。使用 sshd -T命令可以查看SSH服务最终实际加载的配置</p>
-<p>在终端中运行：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">sudo sshd <span class="hljs-punctuation">-</span>T <span class="hljs-string">| grep passwordauthentication</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-生成密钥（远程登陆）"><a href="#3-生成密钥（远程登陆）" class="headerlink" title="3. 生成密钥（远程登陆）"></a>3. 生成密钥（远程登陆）</h3><p>生成秘钥</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-comment"># 生成秘钥</span><br><span class="hljs-attribute">ssh</span>-keygen -t rsa -b <span class="hljs-number">4096</span><br></code></pre></td></tr></table></figure>
-
-<p>将公钥写入 <code>authorized_keys</code>文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> id_rsa.pub &gt;&gt; authorized_keys<br></code></pre></td></tr></table></figure>
-
-<p>将私钥拷贝到 U 盘（临时挂载点）上面</p>
-<blockquote>
-<p>这一步完成之后，即可回到实验室，不用留在机房里面了 🍺</p>
-</blockquote>
-<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><h3 id="配置-sudo"><a href="#配置-sudo" class="headerlink" title="配置 sudo"></a>配置 <code>sudo</code></h3><p><code>Debian</code> 的 <code>visudo</code> 操作是使用 <code>nano</code> 来进行的。如果不喜欢 <code>nano</code> ，想要换成 <code>vim</code> ，请使用如下指令：</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">update-alternatives</span> <span class="hljs-built_in">--config</span> <span class="hljs-string">editor</span> <span class="hljs-comment"># 进入可选列表之后选择 vim</span><br></code></pre></td></tr></table></figure>
-
-<p>编辑 <code>visudo</code>，禁用特定用户的特定权限</p>
-<h3 id="设置时钟同步"><a href="#设置时钟同步" class="headerlink" title="设置时钟同步"></a>设置时钟同步</h3><p>硬件时钟矫正 <code>hwclock</code></p>
-<p>设置时间 <code>date</code> 和 <code>hwclock</code> 同步</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sudo hwclock <span class="hljs-comment">--systohc</span><br></code></pre></td></tr></table></figure>
-
-<p>修改时间为 <code>24小时</code></p>
-<p>重新加载守护进程配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload  <span class="hljs-comment"># 按照 /etc/fstab 重新挂载&amp;&amp; mount -a</span><br></code></pre></td></tr></table></figure>
+<hr>
 
                 
               </div>
@@ -476,11 +438,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
       
-        <a href="/tags/Debian/" class="print-no-link">#Debian</a>
+        <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="print-no-link">#博客</a>
       
-        <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="print-no-link">#服务器</a>
+        <a href="/tags/%E8%BD%AC%E8%BD%BD/" class="print-no-link">#转载</a>
       
     </div>
   
@@ -492,20 +454,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>配置 Debian Server</div>
-      <div>https://wormheart.github.io/2026/05/07/Server/</div>
+      <div>转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</div>
+      <div>https://wormheart.github.io/2026/07/20/repost-hexo-github-pages-blog/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>WormHeart</div>
+          <div>Qs</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年5月7日</div>
+          <div>2026年7月20日</div>
         </div>
       
       
@@ -516,9 +478,21 @@
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
                   </span>
                 </a>
               
@@ -537,18 +511,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/20/repost-hexo-github-pages-blog/" title="转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/01/14/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2026/05/07/Server/" title="配置 Debian Server">
+                        <span class="hidden-mobile">配置 Debian Server</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
