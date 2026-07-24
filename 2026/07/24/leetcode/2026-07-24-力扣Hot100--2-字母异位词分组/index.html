@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>力扣Hot100 ~ 2 字母异位词分组 - WormHeart</title>
+  <title>力扣Hot100 ~ 2 字母异位词分组 - WormHeart</title><meta name="robots" content="noindex">
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -374,7 +374,7 @@
 <p>由于互为字母异位词的两个字符串包含的字母相同，因此对两个字符串分别进行排序之后得到的字符串一定是相同的，故可以将排序之后的字符串作为哈希表的键。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;string&gt;&gt; <span class="hljs-built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;<br>        unordered_map&lt;string, vector&lt;string&gt;&gt; mp;<br>        <span class="hljs-keyword">for</span> (string&amp; str: strs) &#123;<br>            string key = str;<br>            <span class="hljs-built_in">sort</span>(key.<span class="hljs-built_in">begin</span>(), key.<span class="hljs-built_in">end</span>());<br>            mp[key].<span class="hljs-built_in">emplace_back</span>(str);<br>        &#125;<br>        vector&lt;vector&lt;string&gt;&gt; ans;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = mp.<span class="hljs-built_in">begin</span>(); it != mp.<span class="hljs-built_in">end</span>(); ++it) &#123;<br>            ans.<span class="hljs-built_in">emplace_back</span>(it-&gt;second);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
 
-
+<!-- flag of hidden posts -->
                 
               </div>
             
@@ -462,12 +462,6 @@
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2026/07/23/2026-07-23-%E5%8A%9B%E6%89%A3Hot100--1/" title="力扣Hot100 ~ 1 两数之和">
-                        <span class="hidden-mobile">力扣Hot100 ~ 1 两数之和</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
