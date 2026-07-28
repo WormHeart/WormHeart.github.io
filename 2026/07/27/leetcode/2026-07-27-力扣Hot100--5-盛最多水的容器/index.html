@@ -19,24 +19,25 @@
   <meta name="author" content="WormHeart">
   <meta name="keywords" content="WormHeart,博客,Linux,服务器,前端,后端,技术,问题">
   
-    <meta name="description" content="Hi，我是 WormHeart 👋一个爱好游戏、摸鱼，与技术的程序员，希望成为一个永远年轻、永远有趣的人。 这里写些什么 技术：日常开发踩坑、Linux&#x2F;服务器折腾笔记 问题：遇到的奇葩 Bug 与解决方案 刷题：算法练习与代码随想录的记录 生活：偶尔写写一些与代码无关的事  联系方式 GitHub：@WormHeart 邮箱：2505996532@qq.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://wormheart.github.io/about/index.html">
+    <meta name="description" content="这是力扣刷题系列的第5题。又是大败而归的一天QAQ 盛最多水的容器 解题思路我一开始的解题思路出了问题，我想的是从容器两端向中间靠，只有靠近的过程中新的边要大于原来的边就更新，这是出于时间复杂度的角度。 但是实际上完全是想复杂了。我们要寻找最大容量，在向内缩时，只有较小边变化才有变大的可能（较大边变长不影响容量，变小反而减少了容量），那么我们在迭代中，每次进行边的比较，只移动较小边，来探索最大的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力扣Hot100 ~ 5 盛最多水的容器">
+<meta property="og:url" content="https://wormheart.github.io/2026/07/27/leetcode/2026-07-27-%E5%8A%9B%E6%89%A3Hot100--5-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="WormHeart">
-<meta property="og:description" content="Hi，我是 WormHeart 👋一个爱好游戏、摸鱼，与技术的程序员，希望成为一个永远年轻、永远有趣的人。 这里写些什么 技术：日常开发踩坑、Linux&#x2F;服务器折腾笔记 问题：遇到的奇葩 Bug 与解决方案 刷题：算法练习与代码随想录的记录 生活：偶尔写写一些与代码无关的事  联系方式 GitHub：@WormHeart 邮箱：2505996532@qq.com">
+<meta property="og:description" content="这是力扣刷题系列的第5题。又是大败而归的一天QAQ 盛最多水的容器 解题思路我一开始的解题思路出了问题，我想的是从容器两端向中间靠，只有靠近的过程中新的边要大于原来的边就更新，这是出于时间复杂度的角度。 但是实际上完全是想复杂了。我们要寻找最大容量，在向内缩时，只有较小边变化才有变大的可能（较大边变长不影响容量，变小反而减少了容量），那么我们在迭代中，每次进行边的比较，只移动较小边，来探索最大的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-07T07:28:29.000Z">
-<meta property="article:modified_time" content="2026-05-07T09:16:49.047Z">
+<meta property="article:published_time" content="2026-07-27T04:20:00.000Z">
+<meta property="article:modified_time" content="2026-07-28T06:33:53.385Z">
 <meta property="article:author" content="WormHeart">
-<meta property="article:tag" content="WormHeart,博客,Linux,服务器,前端,后端,技术,问题">
+<meta property="article:tag" content="刷题">
+<meta property="article:tag" content="实习">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>关于 - WormHeart</title>
+  <title>力扣Hot100 ~ 5 盛最多水的容器 - WormHeart</title><meta name="robots" content="noindex">
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -100,7 +101,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -283,9 +284,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="力扣Hot100 ~ 5 盛最多水的容器"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-07-27 12:20" pubdate>
+          2026年7月27日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          768 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -303,72 +344,151 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">WormHeart</div>
-    <div class="about-intro">一个爱好游戏、摸鱼，与技术的程序员，希望成为一个永远年轻、永远有趣的人。</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com/WormHeart class="
-           hint--bottom hint--rounded"
-           aria-label="GitHub"
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">力扣Hot100 ~ 5 盛最多水的容器</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p> 这是力扣刷题系列的第5题。又是大败而归的一天QAQ</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/?envType=study-plan-v2&envId=top-100-liked">盛最多水的容器</a></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>我一开始的解题思路出了问题，我想的是从容器两端向中间靠，只有靠近的过程中新的边要大于原来的边就更新，这是出于时间复杂度的角度。</p>
+<p>但是实际上完全是想复杂了。我们要寻找最大容量，在向内缩时，只有较小边变化才有变大的可能（较大边变长不影响容量，变小反而减少了容量），那么我们在迭代中，每次进行边的比较，只移动较小边，来探索最大的容积。</p>
+<p>具体代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">cal_vol</span><span class="hljs-params">(<span class="hljs-type">int</span> left,<span class="hljs-type">int</span> right,vector&lt;<span class="hljs-type">int</span>&gt;&amp; height)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span>(height[right] &gt; height[left]) <span class="hljs-keyword">return</span> height[left] * (right - left);<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> height[right] *  (right - left);<br>&#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; height)</span> </span>&#123;<br><br>        <span class="hljs-type">int</span> left=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> right = height.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-type">int</span> max_vol = <span class="hljs-built_in">cal_vol</span>(left,right,height);<br>        <span class="hljs-keyword">while</span>(left&lt;right)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(height[left]&lt; height[right])<br>            &#123;<br>                left++;<br>                <br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                right--;<br>            &#125;<br>            <span class="hljs-type">int</span> vol = <span class="hljs-built_in">cal_vol</span>(left,right,height);<br>            <span class="hljs-keyword">if</span>(vol&gt;max_vol)max_vol=vol;<br>        &#125;<br>        <span class="hljs-keyword">return</span> max_vol;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<!-- flag of hidden posts -->
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
         
-        
-        
-        <a href=mailto:your-email@example.com class="
-           hint--bottom hint--rounded"
-           aria-label="Email"
-           target="_blank"
-        >
-          <i class="iconfont icon-email-fill" aria-hidden="true"></i>
-          
-        </a>
+  <a href="/categories/%E5%8A%9B%E6%89%A3/" class="category-chain-item">力扣</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
+      
+        <a href="/tags/%E5%AE%9E%E4%B9%A0/" class="print-no-link">#实习</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>力扣Hot100 ~ 5 盛最多水的容器</div>
+      <div>https://wormheart.github.io/2026/07/27/leetcode/2026-07-27-力扣Hot100--5-盛最多水的容器/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>WormHeart</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年7月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              BY-NC-SAB
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <h2 id="Hi，我是-WormHeart-👋"><a href="#Hi，我是-WormHeart-👋" class="headerlink" title="Hi，我是 WormHeart 👋"></a>Hi，我是 WormHeart 👋</h2><p>一个爱好游戏、摸鱼，与技术的程序员，<br>希望成为一个永远年轻、永远有趣的人。</p>
-<h2 id="这里写些什么"><a href="#这里写些什么" class="headerlink" title="这里写些什么"></a>这里写些什么</h2><ul>
-<li><strong>技术</strong>：日常开发踩坑、Linux&#x2F;服务器折腾笔记</li>
-<li><strong>问题</strong>：遇到的奇葩 Bug 与解决方案</li>
-<li><strong>刷题</strong>：算法练习与代码随想录的记录</li>
-<li><strong>生活</strong>：偶尔写写一些与代码无关的事</li>
-</ul>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/WormHeart">@WormHeart</a></li>
-<li>邮箱：<a href="mailto:&#x32;&#x35;&#x30;&#x35;&#x39;&#x39;&#x36;&#53;&#51;&#50;&#64;&#113;&#113;&#46;&#x63;&#x6f;&#109;">2505996532@qq.com</a></li>
-</ul>
-
-  </div>
-
-  
-</article>
-
 
 
 
@@ -395,11 +515,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -517,6 +634,110 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
