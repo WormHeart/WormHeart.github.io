@@ -16,29 +16,28 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#4a7dbe">
-  <meta name="author" content="Qs">
+  <meta name="author" content="WormHeart">
   <meta name="keywords" content="WormHeart,博客,Linux,服务器,前端,后端,技术,问题">
   
-    <meta name="description" content="本文转载自 MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客，原作者：Qs。原文采用 CC BY-NC-SA 4.0 许可协议，转载请注明来源。  使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之">
+    <meta name="description" content="这是力扣刷题系列的第7题。刷了这么久终于能在不看ai的情况下解出一道题目来，而且还是困难题目，可喜可贺可喜可贺！ 接雨水 解题思路这道题，并不需要复杂的算法，找对路径就可以很轻松的解决，回归到了问题最初的模样。 我们要看给的高度图能解多少雨水，很容易陷入一个误区：那就是找坑。找到多少坑来算容积。 这个思路我没有做，但是想想就比较复杂。 我们把问题”原子化“： ​	决定容积大小的，其实就是每个位">
 <meta property="og:type" content="article">
-<meta property="og:title" content="转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客">
-<meta property="og:url" content="https://wormheart.github.io/2026/07/20/repost-hexo-github-pages-blog/index.html">
+<meta property="og:title" content="力扣Hot100 ~ 7 接雨水">
+<meta property="og:url" content="https://wormheart.github.io/2026/07/30/leetcode/2026-07-30-%E5%8A%9B%E6%89%A3Hot100--7-%E6%8E%A5%E9%9B%A8%E6%B0%B4/index.html">
 <meta property="og:site_name" content="WormHeart">
-<meta property="og:description" content="本文转载自 MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客，原作者：Qs。原文采用 CC BY-NC-SA 4.0 许可协议，转载请注明来源。  使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之">
+<meta property="og:description" content="这是力扣刷题系列的第7题。刷了这么久终于能在不看ai的情况下解出一道题目来，而且还是困难题目，可喜可贺可喜可贺！ 接雨水 解题思路这道题，并不需要复杂的算法，找对路径就可以很轻松的解决，回归到了问题最初的模样。 我们要看给的高度图能解多少雨水，很容易陷入一个误区：那就是找坑。找到多少坑来算容积。 这个思路我没有做，但是想想就比较复杂。 我们把问题”原子化“： ​	决定容积大小的，其实就是每个位">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-19T16:00:00.000Z">
+<meta property="article:published_time" content="2026-07-30T04:20:00.000Z">
+<meta property="article:modified_time" content="2026-08-03T11:16:59.293Z">
 <meta property="article:author" content="WormHeart">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="转载">
+<meta property="article:tag" content="刷题">
+<meta property="article:tag" content="实习">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客 - WormHeart</title>
+  <title>力扣Hot100 ~ 7 接雨水 - WormHeart</title><meta name="robots" content="noindex">
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -285,7 +284,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客"></span>
+            <span id="subtitle" data-typed-text="力扣Hot100 ~ 7 接雨水"></span>
           
         </div>
 
@@ -296,8 +295,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-20 00:00" pubdate>
-          2026年7月20日 凌晨
+        <time datetime="2026-07-30 12:20" pubdate>
+          2026年7月30日 中午
         </time>
       </span>
     
@@ -308,7 +307,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.2k 字
         
       </span>
     
@@ -319,7 +318,7 @@
         
         
         
-          14 分钟
+          10 分钟
         
       </span>
     
@@ -358,54 +357,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</h1>
+            <h1 id="seo-header">力扣Hot100 ~ 7 接雨水</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p>本文转载自 <a target="_blank" rel="noopener" href="https://95qs.github.io/2025/06/22/%E4%BD%BF%E7%94%A8%20hexo%20&&%20GitHub%20Pages%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">MrQ - 使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</a>，原作者：Qs。原文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明来源。</p>
-</blockquote>
-<h2 id="使用-hexo-GitHub-Pages-搭建自己的博客"><a href="#使用-hexo-GitHub-Pages-搭建自己的博客" class="headerlink" title="使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客"></a>使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</h2><blockquote>
-<p>起因：在大学期间用过一些 app 去写过一些笔记，发现要么是 app 不好用；要么是自己太弄得太随意了，根本不能回头看。总之，之前很多笔记都被自己给抛弃了。如今下定决心自己搞一个技术博客，专门记录自己的学习笔记。</p>
-</blockquote>
-<p>Hexo 是一个使用 MarkDown 格式文本快速构建静态网页的工具：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo 官网</a>；<br>而 GitHub Pages 则是能部署一个静态网页，配合使用你就能搭建自己的博客了。</p>
-<hr>
-<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>你需要准备好以下工具 Node.js、 Git。</p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h2 id="下载-Hexo"><a href="#下载-Hexo" class="headerlink" title="下载 Hexo"></a>下载 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+                <p>  这是力扣刷题系列的第7题。刷了这么久终于能在不看ai的情况下解出一道题目来，而且还是困难题目，可喜可贺可喜可贺！</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-100-liked">接雨水</a></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>这道题，并不需要复杂的算法，找对路径就可以很轻松的解决，回归到了问题最初的模样。</p>
+<p>我们要看给的高度图能解多少雨水，很容易陷入一个误区：那就是找坑。找到多少坑来算容积。 这个思路我没有做，但是想想就比较复杂。</p>
+<p>我们把问题”原子化“：</p>
+<p>​	决定容积大小的，其实就是每个位置装的雨水之和，而每一个位置能装多少雨水不受制于他的邻居，而是完整的左右手–左边最高和右边最高与自己比较。不管邻居，他自己能装的水，如果高度比左右手最高的高，那么肯定是装不了水的；如果低于，就是较低的左右手最值减去自身高度。然后把每个位置装的水加起来就行，而不用考虑液面平不平这些无关紧要的问题。</p>
+<p>​		想通问题的关键，那么用几次循环就可以用O(n)的复杂度来解决：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">trap</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; height)</span> </span>&#123;<br>        vector&lt;pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">edge</span>(height.<span class="hljs-built_in">size</span>(),&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;);<br>        <span class="hljs-type">int</span> right_high,left_high=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt; height.<span class="hljs-built_in">size</span>();i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(i == <span class="hljs-number">0</span>) &#123; left_high=height[i];<span class="hljs-keyword">continue</span>;  &#125;<br>            edge[i].first=left_high;<br>            left_high= left_high&gt; height[i] ? left_high : height[i];<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i= height.<span class="hljs-built_in">size</span>() <span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(i==height.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>)<br>            &#123;<br>                right_high=height[i];<span class="hljs-keyword">continue</span>;<br>            &#125;<br>            edge[i].second = right_high;<br>            right_high = right_high &gt; height[i] ? right_high: height[i];<br>        &#125;<br>        <span class="hljs-type">int</span> vol=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span> ;i&lt; height.<span class="hljs-built_in">size</span>();i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(height[i] &lt; edge[i].first &amp;&amp; height[i] &lt; edge[i].second)<br>            &#123;<br>                vol +=  <span class="hljs-built_in">min</span>(edge[i].first,edge[i].second) - height[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> vol;<br><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h2 id="初始化-Hexo"><a href="#初始化-Hexo" class="headerlink" title="初始化 Hexo"></a>初始化 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init [目录名称]   # 这里可以指定目录名称，默认为blog<br>cd blog               # 进入blog目录<br>npm install           # 安装依赖<br>hexo server           # 启动本地web服务，在浏览器输入localhost:4000预览博客<br></code></pre></td></tr></table></figure>
-
-<h2 id="生成静态网页"><a href="#生成静态网页" class="headerlink" title="生成静态网页"></a>生成静态网页</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g<br>hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>生成后的关键文件和文件夹</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">.deploy/        # 需部署文件<br>node_modules/   # node.js依赖的插件<br>public/         # 生成的静态网页文件<br>scaffolds/      # 模版<br>source/         # 博客正文和其他源文件<br>themes/         # 主题<br>_config.yml     # 全局配置文件<br></code></pre></td></tr></table></figure>
-
-<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo help                   # 查看帮助<br>hexo init                   # 初始化一个目录<br>hexo new draft &quot;pageName&quot;<br>hexo new &quot;postName&quot;         # 新建文章<br>hexo new page &quot;pageName&quot;    # 新建页面<br>hexo generate || hexo g     # 生成网页，可在public目录查看<br>hexo server || hexo s       # 本地预览<br>hexo deploy || hexo d       # 部署.deploy目录<br>hexo clean || hexo c        # 清除缓存，每次部署前都要删除.deploy目录<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">常用组合</span><br>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d # 部署到服务器<br>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s # 本地部署<br></code></pre></td></tr></table></figure>
-
-<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><p>暂无，后续有会持续更新</p>
-<h2 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h2><h2 id="创建-GitHub-托管仓库"><a href="#创建-GitHub-托管仓库" class="headerlink" title="创建 GitHub 托管仓库"></a>创建 GitHub 托管仓库</h2><p>创建名称为 username.github.io 的仓库，这是特殊的命名约定。可以通过 <a target="_blank" rel="noopener" href="http://username.github.io/">http://username.github.io</a> 来访问个人主页</p>
-<h2 id="生成-SSH-key"><a href="#生成-SSH-key" class="headerlink" title="生成 SSH key"></a>生成 SSH key</h2><p>参考我之前写的关于 SSH key 的文章：<a target="_blank" rel="noopener" href="https://95qs.github.io/2025/06/21/%E7%94%9F%E6%88%90ssh-key/">生成 ssh-key</a></p>
-<h2 id="修改-Hexo-部署配置"><a href="#修改-Hexo-部署配置" class="headerlink" title="修改 Hexo 部署配置"></a>修改 Hexo 部署配置</h2><p><code>_config.yml</code> 文件在 Hexo 项目根目录下</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:yourname/yourname.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="下载部署需要的插件"><a href="#下载部署需要的插件" class="headerlink" title="下载部署需要的插件"></a>下载部署需要的插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
-
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>使用以下命令就可以部署了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
-
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><h2 id="过程参考"><a href="#过程参考" class="headerlink" title="过程参考"></a>过程参考</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://yupaits.com/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2">使用hexo快速搭建个人博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://yupaits.com/%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2">Hexo教程，看这一篇就够了- How to系列</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20042935/article/details/133920722">保姆级教程：从零构建 GitHub Pages 静态网站</a></li>
-</ol>
-<h2 id="过程遇到的一些问题"><a href="#过程遇到的一些问题" class="headerlink" title="过程遇到的一些问题"></a>过程遇到的一些问题</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43546721/article/details/139506583">完美解决 git 报错 “fatal: unable to access ‘https://github.com/.../.git‘: Recv failure Connection was rese</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41688840/article/details/125826614">部署 hexo 遇到报错 ERROR Deployer not found: git 的解决办法</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38781463">hexo 本地测试运行重启后页面空白，提示：WARN No layout: index.html?</a></li>
-</ol>
-<hr>
-
+<!-- flag of hidden posts -->
                 
               </div>
             
@@ -423,7 +389,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  <a href="/categories/%E5%8A%9B%E6%89%A3/" class="category-chain-item">力扣</a>
   
   
 
@@ -438,11 +404,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
       
-        <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="print-no-link">#博客</a>
-      
-        <a href="/tags/%E8%BD%AC%E8%BD%BD/" class="print-no-link">#转载</a>
+        <a href="/tags/%E5%AE%9E%E4%B9%A0/" class="print-no-link">#实习</a>
       
     </div>
   
@@ -454,20 +418,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>转载：使用 hexo &amp;&amp; GitHub Pages 搭建自己的博客</div>
-      <div>https://wormheart.github.io/2026/07/20/repost-hexo-github-pages-blog/</div>
+      <div>力扣Hot100 ~ 7 接雨水</div>
+      <div>https://wormheart.github.io/2026/07/30/leetcode/2026-07-30-力扣Hot100--7-接雨水/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Qs</div>
+          <div>WormHeart</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月20日</div>
+          <div>2026年7月30日</div>
         </div>
       
       
@@ -476,26 +440,7 @@
           <div>许可协议</div>
           <div>
             
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                    <i class="iconfont icon-cc-nc"></i>
-                  </span>
-                </a>
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                    <i class="iconfont icon-cc-sa"></i>
-                  </span>
-                </a>
-              
+              BY-NC-SAB
             
           </div>
         </div>
@@ -511,21 +456,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/20/repost-hexo-hide-posts/" title="转载：Hexo实现部分文章不可见">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">转载：Hexo实现部分文章不可见</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2026/05/07/Server/" title="配置 Debian Server">
-                        <span class="hidden-mobile">配置 Debian Server</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
