@@ -19,15 +19,15 @@
   <meta name="author" content="WormHeart">
   <meta name="keywords" content="WormHeart,博客,Linux,服务器,前端,后端,技术,问题">
   
-    <meta name="description" content="解题思路可以简单的用二叉搜索树（multi_set)来做，不过复杂度是O(nlgK)，还是可以进一步优化. 我们采用双端队列： 时间复杂度 O(n)，空间 O(k)。 核心思路：维护一个递减的双端队列，队首始终是当前窗口最大值。  新元素入队时，从队尾弹出所有比它小的元素（因为它们永远没机会成为最大值了）。 移除离开窗口的元素（检查队首是否过期）。     操作 含义 在本算法中的作用">
+    <meta name="description" content="解题思路我们枚举 s 子串的右端点 right（子串最后一个字母的下标），如果子串涵盖 t，就不断右移左端点 left 直到不涵盖为止。在移动过程中更新最短子串的左右端点。 具体来说： 初始化 ansLeft&#x3D;−1, ansRight&#x3D;m，用来记录最短子串的左右端点，其中 m 是 s 的长度。用一个哈希表（或者数组）cntT 统计 t 中每个字母的出现次数。初始化 left">
 <meta property="og:type" content="article">
-<meta property="og:title" content="力扣Hot100 ~ 11 滑动窗口的最大值">
-<meta property="og:url" content="https://wormheart.github.io/2026/09/03/leetcode/2026-09-03-%E5%8A%9B%E6%89%A3Hot100--11-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/index.html">
+<meta property="og:title" content="力扣Hot100 ~ 12 最小覆盖子串">
+<meta property="og:url" content="https://wormheart.github.io/2026/09/14/leetcode/2026-09-03-%E5%8A%9B%E6%89%A3Hot100--12-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/index.html">
 <meta property="og:site_name" content="WormHeart">
-<meta property="og:description" content="解题思路可以简单的用二叉搜索树（multi_set)来做，不过复杂度是O(nlgK)，还是可以进一步优化. 我们采用双端队列： 时间复杂度 O(n)，空间 O(k)。 核心思路：维护一个递减的双端队列，队首始终是当前窗口最大值。  新元素入队时，从队尾弹出所有比它小的元素（因为它们永远没机会成为最大值了）。 移除离开窗口的元素（检查队首是否过期）。     操作 含义 在本算法中的作用">
+<meta property="og:description" content="解题思路我们枚举 s 子串的右端点 right（子串最后一个字母的下标），如果子串涵盖 t，就不断右移左端点 left 直到不涵盖为止。在移动过程中更新最短子串的左右端点。 具体来说： 初始化 ansLeft&#x3D;−1, ansRight&#x3D;m，用来记录最短子串的左右端点，其中 m 是 s 的长度。用一个哈希表（或者数组）cntT 统计 t 中每个字母的出现次数。初始化 left">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-09-03T10:20:00.000Z">
-<meta property="article:modified_time" content="2026-09-14T10:20:24.479Z">
+<meta property="article:published_time" content="2026-09-14T10:20:00.000Z">
+<meta property="article:modified_time" content="2026-09-14T10:22:06.061Z">
 <meta property="article:author" content="WormHeart">
 <meta property="article:tag" content="刷题">
 <meta property="article:tag" content="实习">
@@ -37,7 +37,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>力扣Hot100 ~ 11 滑动窗口的最大值 - WormHeart</title><meta name="robots" content="noindex">
+  <title>力扣Hot100 ~ 12 最小覆盖子串 - WormHeart</title><meta name="robots" content="noindex">
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -284,7 +284,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="力扣Hot100 ~ 11 滑动窗口的最大值"></span>
+            <span id="subtitle" data-typed-text="力扣Hot100 ~ 12 最小覆盖子串"></span>
           
         </div>
 
@@ -295,8 +295,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-09-03 18:20" pubdate>
-          2026年9月3日 晚上
+        <time datetime="2026-09-14 18:20" pubdate>
+          2026年9月14日 晚上
         </time>
       </span>
     
@@ -307,7 +307,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          784 字
+          1.4k 字
         
       </span>
     
@@ -318,7 +318,7 @@
         
         
         
-          7 分钟
+          13 分钟
         
       </span>
     
@@ -357,57 +357,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">力扣Hot100 ~ 11 滑动窗口的最大值</h1>
+            <h1 id="seo-header">力扣Hot100 ~ 12 最小覆盖子串</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
 </blockquote>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>可以简单的用二叉搜索树（multi_set)来做，不过复杂度是O(nlgK)，还是可以进一步优化.</p>
-<p>我们采用双端队列：</p>
-<p>时间复杂度 <strong>O(n)</strong>，空间 O(k)。</p>
-<p><strong>核心思路</strong>：维护一个<strong>递减</strong>的双端队列，队首始终是当前窗口最大值。</p>
-<ul>
-<li>新元素入队时，从队尾弹出所有比它小的元素（因为它们永远没机会成为最大值了）。</li>
-<li>移除离开窗口的元素（检查队首是否过期）。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">操作</th>
-<th align="left">含义</th>
-<th align="left">在本算法中的作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong><code>dq.push_back(i)</code></strong></td>
-<td align="left">在<strong>队尾</strong>插入当前下标</td>
-<td align="left">新元素从后面进来</td>
-</tr>
-<tr>
-<td align="left"><strong><code>dq.pop_back()</code></strong></td>
-<td align="left">删除<strong>队尾</strong>的元素</td>
-<td align="left">维护递减队列：把队尾比当前值小的旧下标扔掉</td>
-</tr>
-<tr>
-<td align="left"><strong><code>dq.pop_front()</code></strong></td>
-<td align="left">删除<strong>队头</strong>的元素</td>
-<td align="left">移除已经滑出窗口边界的过期下标</td>
-</tr>
-<tr>
-<td align="left"><strong><code>dq.front()</code></strong></td>
-<td align="left">获取<strong>队头</strong>的元素</td>
-<td align="left">队头就是当前窗口的最大值下标</td>
-</tr>
-<tr>
-<td align="left"><strong><code>dq.back()</code></strong></td>
-<td align="left">获取<strong>队尾</strong>的元素</td>
-<td align="left">用于比较，判断队尾的值是否小于当前值</td>
-</tr>
-</tbody></table>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>我们枚举 s 子串的右端点 right（子串最后一个字母的下标），如果子串涵盖 t，就不断右移左端点 left 直到不涵盖为止。在移动过程中更新最短子串的左右端点。</p>
+<p>具体来说：</p>
+<p>初始化 ansLeft&#x3D;−1, ansRight&#x3D;m，用来记录最短子串的左右端点，其中 m 是 s 的长度。<br>用一个哈希表（或者数组）cntT 统计 t 中每个字母的出现次数。<br>初始化 left&#x3D;0，以及一个空哈希表（或者数组）cntS，用来统计 s 子串中每个字母的出现次数。<br>遍历 s，设当前枚举的子串右端点为 right，把 s[right] 的出现次数加一。<br>遍历 cntS 中的每个字母及其出现次数，如果出现次数都大于等于 cntT 中的字母出现次数：<br>如果 right−left&lt;ansRight−ansLeft，说明我们找到了更短的子串，更新 ansLeft&#x3D;left, ansRight&#x3D;right。<br>把 s[left] 的出现次数减一。<br>左端点右移，即 left 加一。<br>重复上述三步，直到 cntS 有字母的出现次数小于 cntT 中该字母的出现次数为止。<br>最后，如果 ansLeft&lt;0，说明没有找到符合要求的子串，返回空字符串，否则返回下标 ansLeft 到下标 ansRight 之间的子串。<br>由于本题大写字母和小写字母都有，为了方便，代码实现时可以直接创建大小为 128 的数组，直接把 ASCII 值作为数组的下标。</p>
 <p>具体代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">maxSlidingWindow</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt; res;<br>    deque&lt;<span class="hljs-type">int</span>&gt; dq; <span class="hljs-comment">// 存下标</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>        <span class="hljs-comment">// 1. 移除队首过期下标</span><br>        <span class="hljs-keyword">if</span> (!dq.<span class="hljs-built_in">empty</span>() &amp;&amp; dq.<span class="hljs-built_in">front</span>() &lt; i - k + <span class="hljs-number">1</span>) dq.<span class="hljs-built_in">pop_front</span>();<br>        <span class="hljs-comment">// 2. 维护单调递减（弹出队尾比当前小的）</span><br>        <span class="hljs-keyword">while</span> (!dq.<span class="hljs-built_in">empty</span>() &amp;&amp; nums[dq.<span class="hljs-built_in">back</span>()] &lt;= nums[i]) dq.<span class="hljs-built_in">pop_back</span>();<br>        dq.<span class="hljs-built_in">push_back</span>(i);<br>        <span class="hljs-comment">// 3. 记录结果</span><br>        <span class="hljs-keyword">if</span> (i &gt;= k - <span class="hljs-number">1</span>) res.<span class="hljs-built_in">push_back</span>(nums[dq.<span class="hljs-built_in">front</span>()]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">is_covered</span><span class="hljs-params">(<span class="hljs-type">int</span> cnt_s[], <span class="hljs-type">int</span> <span class="hljs-type">cnt_t</span>[])</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-string">&#x27;A&#x27;</span>; i &lt;= <span class="hljs-string">&#x27;Z&#x27;</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span> (cnt_s[i] &lt; <span class="hljs-type">cnt_t</span>[i]) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-string">&#x27;a&#x27;</span>; i &lt;= <span class="hljs-string">&#x27;z&#x27;</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span> (cnt_s[i] &lt; <span class="hljs-type">cnt_t</span>[i]) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">minWindow</span><span class="hljs-params">(string s, string t)</span> </span>&#123;<br>        <span class="hljs-type">int</span> cnt_s[<span class="hljs-number">128</span>]&#123;&#125;;<br>        <span class="hljs-type">int</span> <span class="hljs-type">cnt_t</span>[<span class="hljs-number">128</span>]&#123;&#125;; <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : t) &#123;<br>            <span class="hljs-type">cnt_t</span>[c]++;<br>        &#125;<br><br>        <span class="hljs-type">int</span> m = s.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> ans_left = <span class="hljs-number">-1</span>, ans_right = m;<br>        <span class="hljs-type">int</span> left = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> right = <span class="hljs-number">0</span>; right &lt; m; right++) &#123; <br>            cnt_s[s[right]]++; <br>            <span class="hljs-keyword">while</span> (<span class="hljs-built_in">is_covered</span>(cnt_s, <span class="hljs-type">cnt_t</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (right - left &lt; ans_right - ans_left) &#123; <br>                    ans_left = left;<br>                    ans_right = right;<br>                &#125;<br>                cnt_s[s[left]]--; <br>                left++;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> ans_left &lt; <span class="hljs-number">0</span> ? <span class="hljs-string">&quot;&quot;</span> : s.<span class="hljs-built_in">substr</span>(ans_left, ans_right - ans_left + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
 
 <!-- flag of hidden posts -->
                 
@@ -456,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>力扣Hot100 ~ 11 滑动窗口的最大值</div>
-      <div>https://wormheart.github.io/2026/09/03/leetcode/2026-09-03-力扣Hot100--11-滑动窗口的最大值/</div>
+      <div>力扣Hot100 ~ 12 最小覆盖子串</div>
+      <div>https://wormheart.github.io/2026/09/14/leetcode/2026-09-03-力扣Hot100--12-最小覆盖子串/</div>
     </div>
     <div class="license-meta">
       
@@ -469,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年9月3日</div>
+          <div>2026年9月14日</div>
         </div>
       
       
