@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2026/09/17/leetcode/2026-09-17-%E5%8A%9B%E6%89%A3Hot100--13-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/"/>
+    <url>/2026/09/17/leetcode/2026-09-17-%E5%8A%9B%E6%89%A3Hot100--13-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</url>
+    
+    <content type="html"><![CDATA[<hr><h2 id="wei"><a href="#wei" class="headerlink" title="wei"></a>wei</h2><blockquote><p>最近沉迷于玩赵云与阿斗，韩信啊韩信，你怎么能如此堕落，从今日起，退游！</p></blockquote><h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题是很明显的动态规划的题。力扣官方还提供了一个分冶法的思路，看不懂，在这个ai时代也不需要看懂，就用最直接的动态规划来应付面试。</p><p>我们要找一个数组的具有最大和的连续子数组，返回他的最大和。我们用一个变量Ai来表示从开头到第i个元素这个子数组，以第i个元素为结尾的最大连续和。很显然，我们要找的结果就转换为了从A1到An的最大值。那么就可以写出来这样的动态规划转移方程：</p><p><em>f</em>(<em>i</em>)&#x3D;max{<em>f</em>(<em>i</em>−1)+<em>nums</em>[<em>i</em>],<em>nums</em>[<em>i</em>]}</p><p>具体实现如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxSubArray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span>  pre;<br>        <span class="hljs-type">int</span> maxAns=nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-type">int</span> end=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(end !=nums.<span class="hljs-built_in">size</span>())&#123;<br>            <span class="hljs-keyword">if</span>(end ==<span class="hljs-number">0</span>)&#123;<br>                pre=nums[end];<br>                end ++;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">if</span>(pre &lt;= <span class="hljs-number">0</span>)&#123;<br>                pre = nums[end];<br>            &#125;<br>            <span class="hljs-keyword">else</span> pre = pre+ nums[end];<br>            maxAns = <span class="hljs-built_in">max</span>(pre,maxAns);<br>            end ++;<br>            &#125;<br><br>        &#125;<br>        <span class="hljs-keyword">return</span> maxAns;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>有关年岁的碎碎念</title>
     <link href="/2026/08/03/misc/2026-08-03-%E6%9C%89%E5%85%B3%E5%B9%B4%E5%B2%81%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <url>/2026/08/03/misc/2026-08-03-%E6%9C%89%E5%85%B3%E5%B9%B4%E5%B2%81%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
